@@ -4,7 +4,7 @@ import * as path from 'path';
 
 const basename = path.basename(__filename);
 const env = (process.env.NODE_ENV || 'development') as string;
-const config: CustomOptions = require(__dirname + '/../config/config.js')[env];
+const config: CustomOptions = require('../database/config/config').default;
 const db: any = {};
 
 interface CustomOptions extends Options {

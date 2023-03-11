@@ -19,4 +19,4 @@ const config: Options = {
   logging: false,
 };
 
-export default config;
+module.exports = config;

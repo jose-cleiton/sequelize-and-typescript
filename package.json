@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pd": "sudo chmod -R 777 ./data",
     "build": "npx tsc",
     "start": "npm run build && node dist/index.js",
     "db:reset": "npm run build && npx sequelize-cli db:drop && npx sequelize-cli db:creat"
