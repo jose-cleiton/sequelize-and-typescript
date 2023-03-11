@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "md": "sequelize-auto -h localhost -d delivery-app  -u root -x $DB_PASS  -p ${DB_PORT}   --dialect ${DIALECT} -o  ${PWD}/src/database/models -l ts",
     "pd": "sudo chmod -R 777 ./data",
     "build": "npx tsc",
     "start": "npm run build && node dist/index.js",
-    "db:reset": "npm run build && npx sequelize-cli db:drop && npx sequelize-cli db:creat"
+    "db:reset": "npx -y tsc && npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all && npm run md && npm run pd"
   },
   "keywords": [],
   "author": "",
