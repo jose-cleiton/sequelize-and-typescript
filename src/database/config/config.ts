@@ -6,7 +6,7 @@ dotenv.config();
 const environment: string = process.env.NODE_ENV || "test";
 
 
-const options: Options = {
+const config: Options = {
   host: process.env.DB_HOST || "localhost",
   port: Number(process.env.DB_PORT) || 3306, 
   database: `${process.env.DB_NAME || "delivery-app"}`,
@@ -19,4 +19,4 @@ const options: Options = {
   logging: false,
 };
 
-export default {options};
+export default config;
